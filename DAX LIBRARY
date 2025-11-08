@@ -305,3 +305,21 @@ CalendarDax = ADDCOLUMNS (
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
+CONFRONTO CATEGORIE SENZA RELAZIONI
+
+Categoria1 = DISTINCT(Vendite[Categoria])
+Categoria2 = DISTINCT(Vendite[Categoria])
+
+-- attenzione, nessuna relazione con la tabella dei fatti dalla quale é nato il distinct, genera errore filtro incrociato!
+
+Vendite_Cat1 =
+VAR Cat1 = SELECTEDVALUE(Categoria1[Categoria])
+RETURN
+CALCULATE(
+ SUM(Vendite[Importo]),
+ FILTER(ALL(Vendite), Vendite[Categoria] = Cat1)
+)
+-- (replica misura2 in modo duale)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
