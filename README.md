@@ -1,4 +1,4 @@
-Softing Scraps
+Paolo Falcone's Scraps
 =======
 
 Frammenti di codice PowerBI, Excel, Power Query, WinDev, WebDev, WordPress, batch, ...
